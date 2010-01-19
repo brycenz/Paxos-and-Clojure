@@ -25,6 +25,6 @@
     (proposal-inform current-proposal-number current-proposal-value)))
 
 (defn accept-request [proposal-number proposal-value]
-  (if (>= proposal-number current-proposal-number)
-    (proposal-accept proposal-number proposal-value)
-    (proposal-inform current-proposal-number current-proposal-value)))
+  (if (< proposal-number current-proposal-number)
+    (proposal-inform current-proposal-number current-proposal-value)
+    (proposal-accept proposal-number proposal-value)))
